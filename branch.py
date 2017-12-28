@@ -8,6 +8,7 @@ def delete_branch(name):
 def get_branches():
     return format_branches(get_git_branches())
 
+
 def get_git_branches():
     return subprocess.check_output(['git', 'branch', '-lvv'])
 
@@ -22,11 +23,16 @@ def format_branches(blob):
     blob = blob[2:]
     newlines = blob.split('\\n')
     newlines = newlines[:-1]
-    newlines = list(filter(lambda x: 'master' not in x, newlines))
     newlines = list(filter(lambda x: '*' not in x, newlines))
-    newlines = list(map(lambda x: x[1:], newlines))
     newlines = trim_branches(newlines)
+    newlines = list(filter(parse_branch_description, newlines))
     return newlines
+
+def parse_branch_description(branch):
+    tokens = branch.split(' ')
+    if tokens[0] == 'master':
+        return False
+    return True
 
 def trim_branches(branches):
     branches = list(map(lambda x: x[0:curses.COLS-2], branches))
