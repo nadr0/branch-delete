@@ -15,8 +15,9 @@ I tend to accumulate a lot of local branches and I want a simple and quick metho
 3. Go to a git repo and type
 ```
 branchdelete
-4. Start deleting old branches!
 ```
+4. Start deleting old branches! Your `git branch` will thank you.
+
 # How to
 
 ###### Controls
