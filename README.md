@@ -9,6 +9,7 @@ I tend to accumulate a lot of local branches and I want a simple and quick metho
 # Install
 1. Clone the repo or download it as a zip.
 2. Add to your favorite config file
+  - Note, I am using `python3` because my normal python is `2.7.6`. 
   ```
   alias branchdelete='python3 /path-to-repo/branch-delete/main.py'
   ```
