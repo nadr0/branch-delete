@@ -12,7 +12,7 @@ I tend to accumulate a lot of local branches and I want a simple and quick metho
 | --- | --- |
 | OSX | Works |
 | Ubuntu 16.04 | Works |
-| Windows | Not natively, you would need to install a linux subsystem and boot from there  |
+| Windows | Not natively, you would need to install a linux subsystem and boot from there or something else that has `ncurses`  |
 | Other linux distros |  Should work if you have python3+ and native `ncurses` |
 
 1. Clone the repo or download it as a zip.
