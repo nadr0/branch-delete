@@ -40,7 +40,7 @@ After pressing enter to select a branch to delete
 # FYI
 
 - your current branch is not included in the branch list
-- master is not include in the branch list
+- master is not included in the branch list
 - branches that need force delete i.g `git branch -D ...` will fail
 
 # Improvements
