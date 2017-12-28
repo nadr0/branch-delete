@@ -6,6 +6,17 @@ Delete local git branches using curses GUI written in python `3.5.2`
 
 I tend to accumulate a lot of local branches and I want a simple and quick method to delete large amounts of branches.
 
+# Install
+1. Clone the repo or download it as a zip.
+2. Add to your favorite config file
+  ```
+  alias branchdelete='python3 /path-to-repo/branch-delete/main.py'
+  ```
+3. Go to a git repo and type
+```
+branchdelete
+4. Start deleting old branches!
+```
 # How to
 
 ###### Controls
