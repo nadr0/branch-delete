@@ -24,3 +24,15 @@ Start screen
 After pressing enter to select a branch to delete
 
 ![Selection Screen](https://github.com/nadr0/branch-delete/blob/master/images/branch-delete-select.png)
+
+# FYI
+
+- your current branch is not included in the branch list
+- master is not include in the branch list
+- branches that need force delete i.g `git branch -D ...` will fail
+
+# Improvements
+
+- config to filter your own custom branches for you cannot accidently delete an important branch
+- handle `git branch -D` error
+- allow for force branch delete
