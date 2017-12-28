@@ -7,6 +7,14 @@ Delete local git branches using curses GUI written in python `3.5.2`
 I tend to accumulate a lot of local branches and I want a simple and quick method to delete large amounts of branches.
 
 # Install
+
+| Systems | Compatibility |
+| --- | --- |
+| OSX | Works |
+| Ubuntu 16.04 | Works |
+| Windows | Not natively, you would need to install a linux subsystem and boot from there  |
+| Other linux distros |  Should work if you have python3+ and native `ncurses` |
+
 1. Clone the repo or download it as a zip.
 2. Add to your favorite config file
   - Note, I am using `python3` because my normal python is `2.7.6`. 
