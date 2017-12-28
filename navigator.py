@@ -30,10 +30,6 @@ class Navigator():
     def eating_keys(self):
         while True:
             c = self.win.getch()
-            if c == 27 and self.key_eater:
-                self.key_eater.defocus()
-                self.key_eater = None
-                continue
 
             # Send the key to another window
             if self.key_eater:
@@ -47,18 +43,15 @@ class Navigator():
                     self.key_eater = kb['window']
                     self.key_eater.focus()
                     self.draw_info()
+                if result == 'deleted':
+                    kb = self.key_binds['s']
+                    self.key_eater = kb['window']
+                    self.key_eater.update_from_delete()
+                    self.key_eater.focus()
+                    self.draw_info()
+                if result == 'quit':
+                    break;
                 continue
-
-           # Nav window
-            if c == ord('q'):
-                # NOTE: quit application
-                break
-
-            c_char = chr(c)
-            if c_char in self.key_binds:
-                kb = self.key_binds[c_char]
-                self.key_eater = kb['window']
-                self.key_eater.focus()
 
     def draw_info(self):
         header = ' Press enter to delete a local branch'

@@ -42,9 +42,13 @@ class Listing(menu.Menu):
         self.branch_names = branch_names
         self.write_branch_list()
         self.set_branch_events(self.branch_names)
-        self.selected_index = 0
         self.draw()
         self.update()
+
+    def update_from_delete(self):
+        self.selected_index = self.selected_index - 1
+        if self.selected_index < 0:
+            self.selected_index = 0
 
     def focus(self):
         self.selectable = True
@@ -55,10 +59,10 @@ class Listing(menu.Menu):
     def eat_key(self, c):
         if  c == ord('j'):
             self.select('DOWN')
-            pass
         elif c == ord('k'):
             self.select('UP')
-            pass
+        elif c == ord('q'):
+            return 'quit'
         elif c == 10:
             self.select_event()
             return 'enter'

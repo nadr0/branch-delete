@@ -13,6 +13,13 @@ class Prompt(menu.Menu):
     def write_options(self):
         self.append_storage(self.options)
 
+    def create_delete_copy(self, name):
+        front = 'Do you want to delete '
+        back =  '?'
+        crop_length = curses.COLS - len(front) - len(back)
+        name = name[0:crop_length]
+        return front + name + back
+
     def generate_option_events(self, data):
         option_callbacks = [
             (self.noop, None),
@@ -22,6 +29,12 @@ class Prompt(menu.Menu):
         return option_callbacks
 
     def open(self, name):
+        self.selected_index = 1
+        self.set_storage([
+            self.create_delete_copy(name),
+            ' Yes',
+            ' No'
+        ])
         self.draw()
         self.update()
         self.storage_event = []
@@ -45,7 +58,7 @@ class Prompt(menu.Menu):
 
     def wrapper(self, data):
         branch.delete_branch(data)
-        return 'close'
+        return 'deleted'
 
     def noop(self, *args):
         return None
