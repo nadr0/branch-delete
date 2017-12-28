@@ -1,10 +1,10 @@
 # branch-delete
 
-Delete local branches using curses GUI written in python `3.5.2`
+Delete local git branches using curses GUI written in python `3.5.2`
 
 # Purpose
 
-I tend to accumulate a lot of local branches and I wanted a simple and quick method to delete large amounts of branches.
+I tend to accumulate a lot of local branches and I want a simple and quick method to delete large amounts of branches.
 
 # How to
 
